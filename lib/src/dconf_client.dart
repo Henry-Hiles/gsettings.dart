@@ -199,7 +199,7 @@ class DConfClient {
       }
       var type = line.substring(0, index);
       var value = line.substring(index + 1);
-      DConfEngineSource source;
+      DConfEngineSource? source;
       switch (type) {
         case 'user-db':
           source = DConfEngineSourceUser(value, _sessionBus);
@@ -212,7 +212,7 @@ class DConfClient {
         default:
           break; // Ignore unimplemented sources
       }
-      sources.add(source);
+      if (source != null) sources.add(source);
     }
 
     return sources;
