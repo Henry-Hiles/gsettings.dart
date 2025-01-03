@@ -210,7 +210,7 @@ class DConfClient {
         case 'service-db': // Not implemented
         case 'file-db': // Not implemented
         default:
-          throw "Unknown DConf source: '$line'";
+          break; // Ignore unimplemented sources
       }
       sources.add(source);
     }
